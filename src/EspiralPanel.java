@@ -10,10 +10,10 @@ public class EspiralPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		
 		
-		int[] pontosX = new int[18];
-		int[] pontosY = new int[18];
+		int[] pontosX = new int[20];
+		int[] pontosY = new int[20];
 		
-		int pulo = 10;
+		int pulo = 30;
 		
 		pontosX[0] = getWidth()/2;
 		pontosY[0] = getHeight()/2;
@@ -22,48 +22,52 @@ public class EspiralPanel extends JPanel {
 			
 			if(i%8 == 1) {
 				
-				pontosX[i] = pontosX[i - 1] - 10;
+				pontosX[i] = pontosX[i - 1] - 20;
 				pontosY[i] = pontosY[i - 1] +  pulo;
 				
 			}else if(i%8 == 2) {
 				
 				pontosX[i] = pontosX[i - 1] - pulo;
-				pontosY[i] = pontosY[i - 1] +  10;
-				
+				pontosY[i] = pontosY[i - 1] +  20;
+				//
 			}else if(i%8 == 3) {
 				
 				pontosX[i] = pontosX[i - 1] - pulo;
-				pontosY[i] = pontosY[i - 1] - 10;
+				pontosY[i] = pontosY[i - 1] - 20;
 				
 			}else if(i%8 == 4) {
 				
-				pontosX[i] = pontosX[i - 1] - 10;
+				pontosX[i] = pontosX[i - 1] - 20;
 				pontosY[i] = pontosY[i - 1] - pulo;
-				
+				//
 			}else if(i%8 == 5) {
 				
-				pontosX[i] = pontosX[i - 1] + 10;
+				pontosX[i] = pontosX[i - 1] + 20;
 				pontosY[i] = pontosY[i - 1] - pulo;
 				
 			}else if(i%8 == 6) {
 				
 				pontosX[i] = pontosX[i - 1] + pulo;
-				pontosY[i] = pontosY[i - 1] - 10;
-				
+				pontosY[i] = pontosY[i - 1] - 20;
+				//
 			}else if(i%8 == 7) {
 				
 				pontosX[i] = pontosX[i - 1] + pulo;
-				pontosY[i] = pontosY[i - 1] +10;
+				pontosY[i] = pontosY[i - 1] + 20;
 				
 			}else if(i%8 == 0) {
 				
-				pontosX[i] = pontosX[i - 1] - 10;
+				pontosX[i] = pontosX[i - 1] + 20;
 				pontosY[i] = pontosY[i - 1] + pulo;
 				
 			}
 
+			if(i%2 == 0) {
+				
+				pulo+=7;
+				
+			}
 			
-			pulo+=10;
 			
 		}
 		
